@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.gitspaceanalyzer.intellij</id>
+    <name>Git Space Analyzer</name>
+    <vendor email="support@gitspaceanalyzer.com" url="https://github.com/your-username/git-space-analyzer">Git Space Analyzer Team</vendor>
+
+    <description><![CDATA[
+    Analyze Git repository space usage and identify large files, artifacts, and unnecessary files across all branches.
+    
+    Features:
+    - Scan entire repository including all branches and history
+    - Identify large files and artifacts
+    - Pinpoint which branches or commits introduced files
+    - Provide actionable insights to reduce repository size
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Git Space Analyzer" 
+                   secondary="true" 
+                   anchor="bottom" 
+                   factoryClass="com.gitspaceanalyzer.intellij.ui.GitSpaceAnalyzerToolWindowFactory"/>
+        
+        <projectService serviceImplementation="com.gitspaceanalyzer.intellij.services.GitSpaceAnalyzerService"/>
+    </extensions>
+
+    <actions>
+        <action id="GitSpaceAnalyzer.Analyze" 
+               class="com.gitspaceanalyzer.intellij.actions.AnalyzeAction" 
+               text="Analyze Repository Space" 
+               description="Analyze Git repository space usage">
+            <add-to-group group-id="VcsGroups" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift G"/>
+        </action>
+    </actions>
+</idea-plugin>

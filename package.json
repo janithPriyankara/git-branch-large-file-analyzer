@@ -1,0 +1,40 @@
+{
+  "name": "git-space-analyzer",
+  "version": "1.0.0",
+  "description": "A comprehensive Git repository space analyzer with IDE plugins",
+  "private": true,
+  "workspaces": [
+    "packages/core",
+    "packages/vscode-extension",
+    "packages/intellij-plugin"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "dev": "npm run dev --workspaces",
+    "clean": "npm run clean --workspaces"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/git-space-analyzer.git"
+  },
+  "keywords": [
+    "git",
+    "repository",
+    "space",
+    "analyzer",
+    "ide-plugin",
+    "vscode",
+    "intellij"
+  ],
+  "author": "",
+  "license": "MIT"
+}
